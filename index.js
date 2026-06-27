@@ -3,9 +3,11 @@ letBtn.addEventListener("click" , async ()=>{
     const favorite = document.getElementById("favorite").value.trim()
     const mood = document.getElementById("mood").value.trim()
     const funny = document.getElementById("funOrSerious").value.trim()
-    const res =  await fetch("/api/chat" , {
+    const res =  await fetch("https://book-backend-peach-five.vercel.app/api/chat" , {
         method : "POST",
-        headers:"content_type : jsonObject",
+        headers: {
+        'Content-Type': 'application/json' // الطريقة الصحيحة
+    },
         body : {
             favorite : favorite,
             userMood : mood,

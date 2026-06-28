@@ -8,11 +8,11 @@ letBtn.addEventListener("click" , async ()=>{
         headers: {
         'Content-Type': 'application/json' // الطريقة الصحيحة
     },
-        body : {
+        body : JSON.stringify({
             favorite : favorite,
             userMood : mood,
             fun : funny 
-        }
+        })
     })
     const data = await res.json()
     console.log(data)

@@ -16,5 +16,4 @@ letBtn.addEventListener("click" , async ()=>{
     })
     const data = await res.json()
     console.log(data)
-
 })

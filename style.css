@@ -18,6 +18,7 @@ header , #Ai-questions{
     justify-content: center;
     color: #ffffff;
     width : 100%;
+    text-align: center;
 }
 header{
     text-align: center;
@@ -28,7 +29,6 @@ header{
     margin-bottom: 0;
     font-size: 6rem;
     margin-top: 1.5rem;
-    /* background: #020024; */
     background: linear-gradient(90deg,
                 rgb(26, 16, 224) 0%,
                 rgb(12, 204, 211) 35%,
@@ -70,7 +70,7 @@ textarea{
     font-size: 1rem;
     border : none;
 }
-#let{
+.btn{
     display : block;
     width : 80%;
     max-width: 25rem;
@@ -83,6 +83,18 @@ textarea{
     border-radius: .3rem;
     cursor : pointer;
 }
-#let:hover , #let:active{
+.btn:hover , .btn:active{
     background-color: #adff2f;
+}
+.cover{
+    width: 90%; 
+    max-width: 500px ;
+    border-radius: 3px;
+    margin: 10px auto;
+    border: solid 2px white;   
+}
+.title{
+    width : 95%; 
+    margin: 4px auto;
+    display: block;
 }

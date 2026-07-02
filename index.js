@@ -12,7 +12,7 @@ letBtn.addEventListener("click" , async ()=>{
     if(favorite && mood && funny){
     container.style.display = 'flex'
     AiQues.style.display = 'none'
-    container.innerHTML = 'Loading...'
+    container.innerHTML = '<p class="load">Loading...</p>'
     const res =  await fetch("https://book-backend-peach-five.vercel.app/api/chat" , {
         method : "POST",
         headers: {

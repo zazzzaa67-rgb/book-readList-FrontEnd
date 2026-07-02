@@ -89,7 +89,7 @@ textarea{
 }
 .cover{
     width: 90%; 
-    max-width: 500px ;
+    max-width: 550px ;
     border-radius: 3px;
     margin: 10px auto;
     border: solid 2px white;   
@@ -107,4 +107,7 @@ textarea{
     font-size:1.2rem ;
     line-height: 1.5rem;
     max-width: 37.5rem;
+}
+.load{
+    font-size: 1.5rem;
 }

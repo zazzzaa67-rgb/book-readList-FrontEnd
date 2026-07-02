@@ -1,12 +1,17 @@
 const letBtn = document.getElementById("let")
 let bookNum = 0 
 let data = ''
-const html =  document.getElementById("Ai-questions").innerHTML
-const container = document.getElementById("Ai-questions")
+const container = document.getElementById("container")
+const AiQues = document.getElementById("Ai-questions")
 letBtn.addEventListener("click" , async ()=>{
+    
+        
     const favorite = document.getElementById("favorite").value.trim()
     const mood = document.getElementById("mood").value.trim()
     const funny = document.getElementById("funOrSerious").value.trim()
+    if(favorite && mood && funny){
+    container.style.display = 'flex'
+    AiQues.style.display = 'none'
     container.innerHTML = 'Loading...'
     const res =  await fetch("https://book-backend-peach-five.vercel.app/api/chat" , {
         method : "POST",
@@ -21,7 +26,8 @@ letBtn.addEventListener("click" , async ()=>{
     })
     data = await res.json()
     renderBook(0)
-    bookNum += 1
+    bookNum += 1}
+    else{alert('Please fill in all the fields before continuing.')}
 })
 function renderBook(index){
         container.innerHTML = `
@@ -38,6 +44,15 @@ container.addEventListener('click' , (e)=>{
             renderBook(bookNum)
             bookNum += 1; }
     }
-    // I will start from here tomorrow 
+    if(e.target.id == 'next' && bookNum === data.books.length ){
+        AiQues.style.display = 'flex'
+        container.style.display = 'none'
+        document.querySelectorAll('.respond').forEach((el)=>{
+            el.value = ''
+        })
+
+        document.querySelector('main').innerHTML = html
+
+    }
     
 })
